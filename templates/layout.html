@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        .h1{
+        align-text: center;
+        }
+    </style>
+    <title>360pmi</title>
+
+    <!-- Bootstrap-->
+    <link rel="stylesheet" href="{{url_for('static', filename='css/bootstrap.min.css')}}">
+    <!--<link rel="stylesheet" href="{{url_for('static', filename='css/main.css')}}"> -->
+
+    <!-- NAVIGATION  -->
+    <nav class="navbar navbar-default navbar-fixed navbar-expand-lg navbar-light bg-light" >
+        <!--<nav class="navbar navbar-light bg-light">-->
+        <a class="navbar-brand" href="/">
+            <img src="{{url_for('static', filename='css/360-pmi-logo-red.svg')}}" width="30" height="30"
+                 class="d-inline-block align-top" alt="" loading="lazy">
+            360 PMI°
+        </a>
+
+            <h1>Plataforma de Solicitudes</h1>
+        </div>
+
+    </nav>
+</head>
+<body>
+
+
+<div class="container pt-4">
+    {% block body %}
+    {% endblock %}
+</div>
+</body>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<head>
+    <style>
+
+
+    </style>
+    <link rel="stylesheet" href="{{url_for('static', filename='css/bootstrap.min.css')}}">
+
+    <nav class="navbar  navbar-light bg-light">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01"
+                aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <a class="navbar-brand" href="/">
+            <img src="{{url_for('static', filename='css/360-pmi-logo-red.svg')}}" width="30" height="30"
+                 class="d-inline-block align-top" alt="" loading="lazy">
+            360 PMI°
+        </a>
+         <li class="nav-item active">
+            <a class="nav-link" href="/logout">Cerrar Sesion <span class="sr-only">(current)</span></a>
+        </li>
+    </nav>
+</head>
+<body>
+<form action="/cargar" method="POST" class="container" style="margin-top: 20px">
+    <div class="row">
+        <div class="form-group col-6">
+            <label for="exampleFormControlInput1">Nombre</label>
+            <input type="text" class="form-control" name="nombre" id="exampleFormControlInput1"
+                   placeholder="Nombre" required>
+        </div>
+        <div class="form-group col-6">
+            <label for="exampleFormControlInput2">Apellido</label>
+            <input type="text" class="form-control" name="apellido" id="exampleFormControlInput2"
+                   placeholder="Apellido" required>
+        </div>
+    </div>
+    <div class="row">
+        <div class="form-group col-6">
+            <label for="exampleFormControlInput1">Email</label>
+            <input type="email" class="form-control" name="correo" id="exampleFormControlInput3"
+                   placeholder="Email" required>
+        </div>
+        <div class="form-group col-6">
+            <label for="exampleFormControlInput2">Telefóno</label>
+            <input type="text" class="form-control" name="telefono" id="exampleFormControlInput4"
+                   placeholder="telefono" requiered>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="exampleFormControlSelect1">Asunto</label>
+        <select class="form-control" name="asunto" id="exampleFormControlSelect1" onclick="consulta()" required>
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+        </select>
+    </div>
+    <div class="form-group">
+    <label for="detalle">Example textarea</label>
+    <textarea class="form-control" name="detalle" id="detalle" rows="3"></textarea>
+  </div>
+    <div>
+        <button type="submit" class="btn btn-primary">Enviar</button>
+    </div>
+</form>
+</body>
+</html>

@@ -1,0 +1,35 @@
+{% extends 'layout.html' %}
+{% block body %}
+<div class="row">
+    <div class="col-md-10" align=center>
+        <div style=»padding: 0px; float: right; width: 45%; text-align: justify;»>
+            <div class="card card-body" style="width:400px;" align=left>
+                <h1> Login </h1>
+                <!-- Image and text -->
+                <form action="/login" method="POST">
+                    <div class="form-group">
+                        <label for="n_usuario">Nombre de Usuario</label>
+                        <input type="text" class="form-control" name="n_usuario" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="contrasena">Contraseña</label>
+                        <input type="password" class="form-control" name="contrasena"required>
+                    </div>
+                    <button type="submit" class="btn btn-primary" href="/login">Ingresar</button>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="/registro">Eres nuevo? Registrarme</a>
+
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- <div class="row mx-md-n5" style="width: auto; margin: auto auto;"> -->
+
+
+<!--</div>-->
+
+
+{% endblock %}
