@@ -1,11 +1,8 @@
 # librerias / libraries
 from flask import Flask, render_template, request, redirect, url_for, flash, session
 from flask_mysqldb import MySQL, MySQLdb
-# from flask_login import LoginManager
 import bcrypt
 
-# import mysql.connector
-# from mysql.connector import Error
 
 # inicializaciones / initializations
 app = Flask("__name__")
@@ -35,20 +32,7 @@ def Index():
         return render_template('login.html')
 
 
-'''@app.route('/', methods=['POST'])
-def autenticacion():
-    usuario = request.form['correo']
-    contrasena = request.form['contrasena']
-    cur = mysql.connection.cursor()
-    cur.execute("SELECT * FROM usuario WHERE correo = '" + usuario + "'and password'" + contrasena + "'")
-    data = cur.fetchone()
-    if data is None:
-        return "Correo o Contraseña erroneos"
-    else:
-        return render_template('solicitudes.html')
-'''
-
-
+# ruta de inicio de la plataforma e ingreso
 @app.route('/login', methods=["GET", "POST"])
 def login():
     if request.method == "POST":
@@ -69,18 +53,18 @@ def login():
     else:
         return render_template("login.html")
 
-
+# cierre de sesion
 @app.route('/logout')
 def logout():
     session.clear()
     return render_template("login.html")
 
-
+# direccionamiento a la pagina de registro
 @app.route('/registro')
 def registro():
     return render_template('registro.html')
 
-
+# conexion entre el formulario de registro y la base de datos
 @app.route('/registrar', methods=['GET', 'POST'])
 def registrar():
     if request.method == 'POST':
@@ -97,12 +81,12 @@ def registrar():
         session['correo'] = correo
         return render_template('login.html')
 
-
+# redireccion a la pagina de solicitudes
 @app.route('/solicitudes')
 def solicitudes():
     return render_template('solicitudes.html')
 
-
+#carga de camposde solicitud
 @app.route('/cargar', methods=['POST'])
 def cargar():
     if request.method == 'POST':
